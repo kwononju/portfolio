@@ -1,0 +1,1600 @@
+/* Pretendard 폰트 import */
+@import url('./font/Pretendard-1.3.9/web/static/pretendard.css');
+
+/* 기본 리셋 및 설정 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Pretendard', sans-serif;
+    line-height: 1.6;
+    color: #000;
+    background-color: #fff;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* 인트로 헤더 - 상단 flex 레이아웃 */
+.intro-header {
+    position: absolute;
+    top: 20px;
+    left: 100px;
+    right: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+/* 인트로 타이틀 */
+.intro-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #000;
+    letter-spacing: 1px;
+}
+
+.toggle-checkbox {
+    display: none;
+}
+
+.toggle-label {
+    display: block;
+    width: 60px;
+    height: 30px;
+    background-color: #ccc;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+}
+
+.toggle-slider {
+    display: block;
+    width: 26px;
+    height: 26px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-checkbox:checked + .toggle-label {
+    background-color: #373AFF;
+}
+
+.toggle-checkbox:checked + .toggle-label .toggle-slider {
+    transform: translateX(30px);
+}
+
+/* Copyright */
+.copyright {
+    /* position 관련 속성 제거됨 */
+    font-size: 1rem;
+    font-weight: 400;
+    color: #000;
+}
+
+/* 인트로 연락처 정보 */
+.intro-contact-left {
+    position: absolute;
+    bottom: 30px;
+    left: 100px;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #000;
+}
+
+.intro-contact-right {
+    position: absolute;
+    bottom: 30px;
+    right: 100px;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #000;
+}
+
+/* 인트로 섹션 */
+.intro-section {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    position: relative;
+}
+
+.intro-content {
+    text-align: center;
+}
+
+.intro-text {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.intro-line {
+    opacity: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 12rem;
+    transform: translateX(-50px);
+    transition: opacity 0.5s ease, transform 0.5s ease, text-align 0.5s ease;
+}
+
+.intro-line.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.intro-line.align-left {
+    text-align: left;
+}
+
+.intro-line::after {
+    content: '';
+    display: inline-block;
+    width: 3px;
+    height: 1em;
+    background-color: currentColor;
+    animation: blink 1s infinite;
+    margin-left: 2px;
+    vertical-align: baseline;
+    opacity: 1; /* 커서는 항상 보이도록 */
+}
+
+.intro-line.typing-complete::after {
+    display: none;
+}
+
+/* 타이핑 커서 깜빡임 애니메이션 */
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+    51%, 100% {
+        opacity: 0;
+    }
+}
+
+/* 컨텐츠 컨테이너 (프로필부터 포트폴리오까지) */
+.content-container {
+    display: flex;
+    position: relative;
+}
+
+/* 사이드바 */
+.sidebar {
+    position: sticky;
+    top: 20px;
+    height: 100vh;
+    width: 140px;
+    z-index: 1000;
+}
+
+.nav-list {
+    list-style: none;
+}
+
+.nav-list li {
+    margin-bottom: 10px;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #000;
+    font-size: 1.2rem; /* 데스크톱 기본 크기 증가 */
+    font-weight: 700;
+    transition: color 0.3s ease;
+    display: block;
+    padding: 10px 20px; /* 좌우 패딩 추가해서 텍스트 오른쪽으로 이동 */
+}
+
+.nav-item:hover {
+    color: #373AFF;
+}
+
+.nav-item.active {
+    color: #fff;
+    background-color: #373AFF;
+    border-radius: 0 25px 25px 0; /* 우측 상단, 우측 하단만 둥글게 */
+    padding: 5px 20px;
+}
+
+/* 메인 콘텐츠 */
+.main-content {
+    flex: 1;
+    margin-left: 0; /* 마진 완전 제거 */
+}
+
+/* 섹션 공통 스타일 */
+.profile-section,
+.project-section {
+    min-height: 100vh;
+    padding: 20px 10px 60px; /* 패딩 더 줄임 */
+    display: flex;
+    align-items: center;
+}
+
+.section-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.section-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.section-subtitle {
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-bottom: 50px;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* 프로필 섹션 */
+.profile-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px; /* 간격 약간 줄임 */
+    width: 100%;
+    margin-left: 100px;
+    padding: 0 10px; /* 패딩 더 줄임 */
+}
+
+.profile-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 40px;
+    border-right: 1px solid #e0e0e0; /* 구분선 추가 */
+    padding: 0 40px;
+}
+
+.profile-image img {
+    width: 330px;
+    height: 330px;
+    object-fit: cover;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+}
+
+.profile-greeting {
+    margin-bottom: 20px;
+}
+
+.profile-greeting h2 {
+    font-size: 1.4rem;
+    font-weight: normal;
+    color: #000;
+    line-height: 0.5;
+}
+
+.profile-intro {
+    font-size: 1.4rem;
+    font-weight: normal;
+    color: #000;
+    margin: 0;
+}
+
+.name-emphasis {
+    font-size: 1.5rem; /* 크기 약간 증가 */
+    font-weight: 500; /* 폰트 두께 증가 */
+}
+
+.profile-name h3 {
+    font-size: 1.3rem;
+    font-weight: normal;
+    color: #000;
+    margin: 0;
+}
+
+.profile-description p {
+    font-size: 1rem;
+    color: #333;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.profile-right {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.info-section h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #000;
+}
+
+.info-section p {
+    font-size: 1rem;
+    color: #333;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.skills-icons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.skills-icons img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+/* 프로젝트 상세 섹션 */
+.project-detail-section {
+    min-height: 100vh;
+    padding: 0px 130px 60px 0px; /* 옆 패딩 100px로 늘림 */
+    display: flex;
+    align-items: center;
+}
+
+/* 짝수번째 프로젝트(2, 4, 6번째) 패딩 조정 */
+#project02.project-detail-section,
+#project04.project-detail-section,
+#project06.project-detail-section {
+    padding: 0px 0px 60px 130px;
+}
+
+.project-detail-content {
+    display: grid;
+    grid-template-columns: 6fr 3fr; /* 홀수번째: 5대3 비율 */
+    max-width: 2000px; /* 최대 너비 훨씬 더 증가 */
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* 짝수번째 프로젝트는 3대5 비율로 변경 */
+#project02 .project-detail-content,
+#project04 .project-detail-content,
+#project06 .project-detail-content {
+    grid-template-columns: 3fr 6fr; /* 짝수번째: 3대5 비율 */
+}
+
+/* 짝수번째 프로젝트는 HTML 구조로 순서 제어 (CSS order 불필요) */
+
+.project-image-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-project-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.project-info-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0; /* 간격 제거 */
+}
+
+.project-main-title {
+    font-size: 2.4rem; /* 기본 크기 축소 */
+    font-weight: 700;
+    color: #000;
+    line-height: 1;
+    transform: translateX(-1px);
+    margin-bottom: 7px;
+}
+
+.project-logo-image1 {
+    width: 200px; /* 로고 높이 설정 */
+    object-fit: contain;
+}
+
+.project-logo-image {
+    width: 200px; /* 로고 높이 설정 */
+    object-fit: contain;
+}
+
+.project-subtitle {
+    font-size: 1.2rem; /* 크기 조절 */
+    font-weight: 400;
+    color: #000;
+    margin-bottom: 7px;
+}
+
+.project-description {
+    font-size: 0.85rem; /* 크기 조절 */
+    color: #333;
+    line-height: 1.2;
+    margin: 0 0 30px 0; /* 아래 마진을 늘려서 표와 간격 생성 */
+    word-break: keep-all; /* 한글 텍스트 자연스러운 줄바꿈 */
+}
+
+.project-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0; /* 간격 제거 (구분선으로 대체) */
+    padding: 0; /* 패딩 제거 */
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+}
+
+.detail-row {
+    display: grid;
+    grid-template-columns: 3.5fr 6.5fr; /* 3.5:6.5 비율 */
+    align-items: center;
+    min-height: 50px; /* 높이 증가 */
+    border-bottom: 1px solid #e0e0e0; /* 구분선 추가 */
+    padding: 0; /* 패딩 제거 */
+}
+
+.detail-left,
+.detail-right {
+    display: flex;
+    justify-content: flex-start; /* 왼쪽 정렬 */
+    align-items: center;
+    padding: 10.4px 15px; /* 상하 13px, 좌우 15px 패딩 */
+    gap: 18px;
+}
+
+.detail-row:last-child {
+    border-bottom: none; /* 마지막 행은 구분선 제거 */
+}
+
+.detail-label {
+    font-size: 1.0rem; /* 크기 조정 */
+    color: #000;
+    min-width: 100px;
+}
+
+.detail-value {
+    font-size: 0.85rem; /* 크기 조정 */
+    color: #333;
+}
+
+.detail-tools {
+    display: flex;
+    gap: 20px; /* 간격 증가 */
+}
+
+.tool-icon {
+    width: 30px; /* 크기 조정 */
+    height: 30px;
+    object-fit: contain;
+}
+
+.color-chip {
+    width: 15px; /* 크기 증가 */
+    height: 15px;
+    border-radius: 50%;
+}
+
+.color-chip-border {
+    border: 0.1px solid #1A1A1A;
+}
+
+.dark-mode .color-chip-border {
+    border: 0.3px solid #fff;
+}
+
+.project-buttons {
+    display: flex;
+    gap: 20px; /* 간격 증가 */
+    margin-top: 25px; /* 표와의 간격 늘림 */
+}
+
+.btn-original,
+.btn-figma {
+    padding: 6px 23px; /* 패딩 조정 */
+    border: none;
+    border-radius: 25px;
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 500;
+    font-size: 0.8rem; /* 크기 조정 */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    position: relative;
+    background-color: #333;
+    color: #fff;
+    overflow: hidden;
+    z-index: 1;
+}
+
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes slideOutToRight {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}
+
+.btn-original::before,
+.btn-figma::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #373AFF;
+    transform: translateX(-100%);
+    z-index: -1;
+    border-radius: inherit;
+}
+
+.btn-original:hover::before,
+.btn-figma:hover::before {
+    animation: slideInFromLeft 0.4s ease forwards;
+}
+
+.btn-original:not(:hover)::before,
+.btn-figma:not(:hover)::before {
+    animation: slideOutToRight 0.4s ease forwards;
+}
+
+.btn-original:hover,
+.btn-figma:hover {
+    transform: translateY(-2px);
+}
+
+/* 기존 프로젝트 섹션 (다른 프로젝트들을 위해 유지) */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 50px;
+}
+
+.project-item {
+    background: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.project-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.project-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.project-logo {
+    height: 80px !important;
+    object-fit: contain !important;
+    margin-bottom: 20px !important;
+}
+
+/* 푸터 */
+.footer {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    color: #000;
+    overflow-x: hidden;
+}
+
+.footer-content {
+    text-align: center;
+    width: 100%;
+}
+
+.footer-text {
+    /* font styles moved to .footer-line */
+    width: 100%;
+}
+
+.footer-line {
+    opacity: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    transform: translateX(-50px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    display: block;
+    font-size: 12rem;
+    font-weight: 700;
+    line-height: 1.2;
+    width: 100%;
+}
+
+.footer-line:first-child {
+    text-align: left;
+    padding-left: 300px;
+}
+
+.footer-line:last-child {
+    text-align: right;
+    padding-right: 300px;
+}
+
+.footer-line.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.footer-line::after {
+    content: '';
+    display: inline-block;
+    width: 3px;
+    height: 1em;
+    background-color: currentColor;
+    animation: blink 1s infinite;
+    margin-left: 2px;
+    vertical-align: baseline;
+    opacity: 1; /* 커서는 항상 보이도록 */
+}
+
+.footer-line.typing-complete::after {
+    display: none;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1400px) {
+    .nav-item {
+        font-size: 1.0rem; /* 1400px 이하에서 크기 조정 */
+    }
+    
+    .intro-header {
+        left: 80px;
+        right: 80px;
+    }
+    
+    .intro-contact-left {
+        left: 80px;
+        font-size: 0.95rem;
+    }
+    
+    .intro-contact-right {
+        right: 80px;
+        font-size: 0.95rem;
+    }
+    
+    .intro-line {
+        font-size: 10rem; /* 1400px 이하에서 크기 조정 */
+    }
+    
+    .footer-line {
+        font-size: 10rem; /* 1400px 이하에서 크기 조정 */
+    }
+    
+    .footer-line:first-child {
+        padding-left: 250px;
+    }
+    
+    .footer-line:last-child {
+        padding-right: 250px;
+    }
+    
+    .profile-content {
+        gap: 60px;
+        margin-left: 60px;
+    }
+    
+    .project-detail-section {
+        padding: 0px 110px 60px 0px;
+    }
+    
+    /* 짝수번째 프로젝트(2, 4, 6번째) 패딩 조정 - 1400px 이하 */
+    #project02.project-detail-section,
+    #project04.project-detail-section,
+    #project06.project-detail-section {
+        padding: 0px 0px 60px 110px;
+    }
+    
+    .project-detail-content {
+        max-width: 1800px;
+    }
+    
+    .section-title {
+        font-size: 2.8rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .profile-image img {
+        width: 280px;
+        height: 280px;
+    }
+    
+    .profile-greeting h2 {
+        font-size: 1.2rem;
+    }
+    
+    .profile-intro {
+        font-size: 1.2rem;
+    }
+    
+    .name-emphasis {
+        font-size: 1.3rem;
+    }
+    
+    .profile-name h3 {
+        font-size: 1.1rem;
+    }
+    
+    .profile-description p {
+        font-size: 0.9rem;
+    }
+    
+    .info-section h4 {
+        font-size: 1.3rem;
+    }
+    
+    .info-section p {
+        font-size: 0.9rem;
+    }
+    
+    .skills-icons img {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .project-main-title {
+        font-size: 2.1rem;
+    }
+    
+    .project-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .project-description {
+        font-size: 0.8rem;
+    }
+    
+    .detail-row {
+        min-height: 45px;
+    }
+    
+    .detail-left,
+    .detail-right {
+        padding: 9px 13px;
+        gap: 15px;
+    }
+    
+    .detail-label {
+        font-size: 0.95rem;
+    }
+    
+    .detail-value {
+        font-size: 0.8rem;
+    }
+    
+    .detail-tools {
+        gap: 15px;
+    }
+    
+    .tool-icon {
+        width: 25px;
+        height: 25px;
+    }
+    
+    .color-chip {
+        width: 12px;
+        height: 12px;
+    }
+    
+    .project-buttons {
+        gap: 15px;
+        margin-top: 15px;
+    }
+    
+    .btn-original,
+    .btn-figma {
+        padding: 4px 20px;
+        font-size: 0.75rem;
+    }
+    
+    .project-logo-image {
+        width: 180px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .sidebar {
+        margin-left: 0; /* 작은 화면에서도 완전 왼쪽에 붙임 */
+    }
+    
+    .main-content {
+        margin-left: 0; /* 마진 완전 제거 */
+    }
+    
+    .intro-header {
+        left: 50px;
+        right: 50px;
+    }
+    
+    .intro-contact-left {
+        left: 50px;
+        font-size: 0.9rem;
+    }
+    
+    .intro-contact-right {
+        right: 50px;
+        font-size: 0.9rem;
+    }
+    
+    .intro-line {
+        font-size: 9rem; /* 태블릿에서 크기 조정 */
+    }
+    
+    .footer-line {
+        font-size: 9rem; /* 태블릿에서 크기 조정 */
+    }
+    
+    .nav-item {
+        font-size: 0.8rem; /* 태블릿에서 크기 조정 */
+        padding: 5px 20px;
+    }
+    
+    .profile-content {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        width: 100%; /* 태블릿에서 전체 너비 */
+        margin-left: 40px; /* 태블릿에서 여백 줄임 */
+    }
+    
+    .profile-left {
+        border-right: none; /* 세로 레이아웃에서는 오른쪽 구분선 제거 */
+        border-bottom: 1px solid #e0e0e0; /* 아래쪽 구분선 추가 */
+        padding-right: 0; /* 오른쪽 패딩 제거 */
+        padding-bottom: 30px; /* 아래쪽 패딩 추가 */
+    }
+    
+    .profile-right {
+        padding-top: 0;
+    }
+    
+    .profile-image img {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .profile-greeting h2 {
+        font-size: 1.1rem;
+    }
+    
+    .profile-intro {
+        font-size: 1.1rem;
+    }
+    
+    .name-emphasis {
+        font-size: 1.2rem;
+    }
+    
+    .profile-name h3 {
+        font-size: 1.0rem;
+    }
+    
+    .profile-description p {
+        font-size: 0.85rem;
+    }
+    
+    .info-section h4 {
+        font-size: 1.2rem;
+    }
+    
+    .info-section p {
+        font-size: 0.85rem;
+    }
+    
+    .skills-icons img {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .project-detail-content {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        max-width: 1200px; /* 최대 너비 조정 */
+    }
+    
+    /* 짝수번째 프로젝트(2, 4, 6번째) 패딩 조정 - 1024px 이하 */
+    .project-detail-section {
+        padding: 0px 60px 90px;
+    }
+
+    #project02.project-detail-section,
+    #project04.project-detail-section,
+    #project06.project-detail-section {
+        padding: 0px 60px 90px;
+    }
+    
+    /* 짝수번째 프로젝트도 1024px 이하에서는 상하 배치 */
+    #project02 .project-detail-content,
+    #project04 .project-detail-content,
+    #project06 .project-detail-content {
+        grid-template-columns: 1fr;
+    }
+    
+    #project02 .project-image-area,
+    #project04 .project-image-area,
+    #project06 .project-image-area {
+        order: 1;
+    }
+
+    #project02 .project-info-area,
+    #project04 .project-info-area,
+    #project06 .project-info-area {
+        order: 2;
+    }
+
+    .project-main-title {
+        font-size: 1.9rem; /* 크기 조정 */
+    }
+    
+    .project-subtitle {
+        font-size: 1.05rem;
+    }
+    
+    .project-description {
+        font-size: 0.75rem;
+    }
+    
+    .detail-row {
+        min-height: 42px;
+    }
+    
+    .detail-left,
+    .detail-right {
+        padding: 8px 12px;
+        gap: 12px;
+    }
+    
+    .detail-label {
+        font-size: 0.9rem;
+    }
+    
+    .detail-value {
+        font-size: 0.75rem;
+    }
+    
+    .detail-tools {
+        gap: 12px;
+    }
+    
+    .tool-icon {
+        width: 22px;
+        height: 22px;
+    }
+    
+    .color-chip {
+        width: 11px;
+        height: 11px;
+    }
+    
+    .project-buttons {
+        gap: 12px;
+        margin-top: 10px;
+    }
+    
+    .btn-original,
+    .btn-figma {
+        padding: 3px 18px;
+        font-size: 0.7rem;
+    }
+    
+    .project-logo-image {
+        width: 160px;
+    }
+    
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .footer-line:first-child {
+        padding-left: 150px;
+    }
+    
+    .footer-line:last-child {
+        padding-right: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+    
+    .main-content {
+        margin-left: 0; /* 마진 완전 제거 */
+    }
+    
+    .intro-header {
+        left: 20px;
+        right: 20px;
+        top: 20px;
+    }
+    
+    .intro-title {
+        font-size: 1.2rem;
+    }
+    
+    .copyright {
+        font-size: 0.9rem;
+    }
+    
+    .nav-item {
+        font-size: 0.7rem; /* 모바일에서 크기 조정 */
+        padding: 5px 20px;
+    }
+    
+    .toggle-label {
+        width: 50px;
+        height: 25px;
+    }
+    
+    .toggle-slider {
+        width: 21px;
+        height: 21px;
+    }
+    
+    .toggle-checkbox:checked + .toggle-label .toggle-slider {
+        transform: translateX(25px);
+    }
+    
+    .intro-contact-left {
+        left: 20px;
+        font-size: 0.85rem;
+    }
+    
+    .intro-contact-right {
+        right: 20px;
+        font-size: 0.85rem;
+    }
+    
+    .intro-line {
+        font-size: 6.5rem; /* 모바일에서 크기 조정 */
+    }
+    
+    .footer-line {
+        font-size: 6.5rem; /* 모바일에서 크기 조정 */
+    }
+    
+    .profile-content {
+        width: 100%; /* 모바일에서 전체 너비 */
+        margin-left: 15px; /* 모바일에서 여백 최소화 */
+    }
+    
+    .profile-section,
+    .project-section {
+        padding: 20px 20px 50px;
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1.3rem;
+    }
+    
+    .profile-image img {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .profile-greeting h2 {
+        font-size: 1.0rem;
+    }
+    
+    .profile-intro {
+        font-size: 1.0rem;
+    }
+    
+    .name-emphasis {
+        font-size: 1.1rem;
+    }
+    
+    .profile-name h3 {
+        font-size: 0.95rem;
+    }
+    
+    .profile-description p {
+        font-size: 0.8rem;
+    }
+    
+    .info-section h4 {
+        font-size: 1.1rem;
+    }
+    
+    .info-section p {
+        font-size: 0.8rem;
+    }
+    
+    .skills-icons img {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .footer-line:first-child {
+        padding-left: 80px;
+    }
+    
+    .footer-line:last-child {
+        padding-right: 80px;
+    }
+    
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-item {
+        padding: 20px;
+    }
+    
+    .project-detail-section {
+        padding-bottom: 50px;
+    }
+    
+    .project-main-title {
+        font-size: 1.5rem; /* 모바일에서 크기 조정 */
+    }
+    
+    .project-logo-image {
+        width: 140px; /* 모바일에서 로고 크기 줄임 */
+    }
+    
+    .project-subtitle {
+        font-size: 1.0rem; /* 모바일에서 크기 조정 */
+    }
+    
+    .project-description {
+        font-size: 0.7rem; /* 모바일에서 크기 조정 */
+    }
+    
+    .detail-row {
+        min-height: 38px;
+    }
+    
+    .detail-left,
+    .detail-right {
+        padding: 7px 10px;
+        gap: 10px;
+    }
+    
+    .detail-label {
+        font-size: 0.8rem; /* 모바일에서 크기 조정 */
+    }
+    
+    .detail-value {
+        font-size: 0.65rem; /* 모바일에서 크기 조정 */
+    }
+    
+    .detail-tools {
+        gap: 10px;
+    }
+    
+    .tool-icon {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .color-chip {
+        width: 10px;
+        height: 10px;
+    }
+    
+    .project-buttons {
+        gap: 10px;
+        margin-top: 5px;
+    }
+    
+    .btn-original,
+    .btn-figma {
+        padding: 3px 15px;
+        font-size: 0.6rem;
+    }
+    
+    .detail-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .main-project-image {
+        max-width: 100%; /* 모바일에서 이미지 크기 조정 */
+    }
+}
+
+@media (max-width: 480px) {
+    .intro-header {
+        left: 15px;
+        right: 15px;
+        top: 15px;
+    }
+    
+    .intro-title {
+        font-size: 0.9rem;
+    }
+    
+    .copyright {
+        font-size: 0.8rem;
+    }
+    
+    .nav-item {
+        font-size: 0.6rem; /* 작은 모바일에서 크기 조정 */
+    }
+    
+    .toggle-label {
+        width: 45px;
+        height: 22px;
+    }
+    
+    .toggle-slider {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .toggle-checkbox:checked + .toggle-label .toggle-slider {
+        transform: translateX(23px);
+    }
+    
+    .intro-contact-left {
+        left: 15px;
+        font-size: 0.75rem;
+    }
+    
+    .intro-contact-right {
+        right: 15px;
+        font-size: 0.75rem;
+    }
+    
+    .intro-line {
+        font-size: 5rem; /* 작은 모바일에서 크기 조정 */
+    }
+    
+    .footer-line {
+        font-size: 5rem; /* 작은 모바일에서 크기 조정 */
+    }
+    
+    .profile-content {
+        width: 100%; /* 작은 모바일에서 전체 너비 */
+        margin-left: 5px; /* 작은 모바일에서 여백 더 줄임 */
+    }
+    
+    .footer-line:first-child {
+        padding-left: 40px;
+    }
+    
+    .footer-line:last-child {
+        padding-right: 40px;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .profile-image img {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .profile-greeting h2 {
+        font-size: 0.9rem;
+    }
+    
+    .profile-intro {
+        font-size: 0.9rem;
+    }
+    
+    .name-emphasis {
+        font-size: 1.0rem;
+    }
+    
+    .profile-name h3 {
+        font-size: 0.85rem;
+    }
+    
+    .profile-description p {
+        font-size: 0.75rem;
+    }
+    
+    .info-section h4 {
+        font-size: 1.0rem;
+    }
+    
+    .info-section p {
+        font-size: 0.75rem;
+    }
+    
+    .skills-icons img {
+        width: 25px;
+        height: 25px;
+    }
+    
+    .skills img {
+        width: 25px;
+        height: 25px;
+    }
+    
+    .project-main-title {
+        font-size: 1.2rem; /* 작은 모바일에서 크기 조정 */
+    }
+    
+    .project-logo-image {
+        width: 120px; /* 작은 모바일에서 로고 크기 더 줄임 */
+    }
+    
+    .project-subtitle {
+        font-size: 0.95rem;
+    }
+    
+    .project-description {
+        font-size: 0.65rem;
+    }
+    
+    .detail-row {
+        min-height: 35px;
+    }
+    
+    .detail-left,
+    .detail-right {
+        padding: 6px 8px;
+        gap: 8px;
+    }
+
+    .detail-right {
+        height: 100%;
+    }
+    
+    .detail-label {
+        font-size: 0.75rem;
+    }
+    
+    .detail-value {
+        font-size: 0.6rem;
+    }
+    
+    .detail-tools {
+        gap: 8px;
+    }
+    
+    .tool-icon {
+        width: 15px;
+        height: 15px;
+    }
+    
+    .color-chip {
+        width: 8px;
+        height: 8px;
+    }
+    
+    .project-buttons {
+        gap: 8px;
+        margin-top: 5px;
+    }
+    
+    .btn-original,
+    .btn-figma {
+        padding: 2px 12px;
+        font-size: 0.55rem;
+    }
+}
+
+/* 스크롤 시 나타나는 애니메이션 */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.animate-on-scroll.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 섹션별 페이드인 애니메이션 */
+.section-fade-in {
+    opacity: 0;
+    transform: translateY(80px);
+    transition: all 1s ease;
+}
+
+.section-fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 프로젝트 섹션 내부 요소들의 순차적 애니메이션 */
+.project-fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.6s ease;
+}
+
+.project-fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 프로필 섹션 내부 요소들의 순차적 애니메이션 */
+.profile-fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.6s ease;
+}
+
+.profile-fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 다크모드 스타일 */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+body.dark-mode .intro-section {
+    background-color: #1a1a1a;
+}
+
+body.dark-mode .copyright,
+body.dark-mode .intro-contact-left,
+body.dark-mode .intro-contact-right,
+body.dark-mode .intro-title {
+    color: #fff;
+}
+
+body.dark-mode .profile-section,
+body.dark-mode .project-section {
+    background-color: #1a1a1a;
+}
+
+body.dark-mode .section-title {
+    color: #fff;
+}
+
+body.dark-mode .section-subtitle {
+    color: #ccc;
+}
+
+body.dark-mode .contact {
+    color: #ccc;
+}
+
+body.dark-mode .profile-greeting h2,
+body.dark-mode .profile-intro,
+body.dark-mode .profile-name h3,
+body.dark-mode .info-section h4 {
+    color: #fff;
+}
+
+body.dark-mode .name-emphasis {
+    color: #fff;
+}
+
+body.dark-mode .profile-description p,
+body.dark-mode .info-section p {
+    color: #ccc;
+}
+
+body.dark-mode .profile-left {
+    border-right-color: #444; /* 다크모드에서 구분선 색상 */
+}
+
+@media (max-width: 1024px) {
+    body.dark-mode .profile-left {
+        border-bottom-color: #444; /* 다크모드에서 반응형 구분선 색상 */
+    }
+}
+
+body.dark-mode .nav-item {
+    color: #fff;
+}
+
+body.dark-mode .nav-item:hover {
+    color: #373AFF;
+}
+
+body.dark-mode .nav-item.active {
+    color: #fff;
+    background-color: #373AFF;
+    border-radius: 0 25px 25px 0; /* 우측 상단, 우측 하단만 둥글게 */
+    padding: 5px 20px;
+}
+
+body.dark-mode .project-item {
+    background-color: #2a2a2a;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .project-item:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .project-detail-section {
+    background-color: #1a1a1a;
+}
+
+body.dark-mode .project-main-title,
+body.dark-mode .project-subtitle,
+body.dark-mode .detail-label {
+    color: #fff;
+}
+
+body.dark-mode .project-description,
+body.dark-mode .detail-value {
+    color: #ccc;
+}
+
+body.dark-mode .project-details {
+    border-top-color: #fff;
+    border-bottom-color: #fff;
+}
+
+body.dark-mode .detail-row {
+    border-bottom-color: #444; /* 다크모드에서 구분선 색상 */
+}
+
+body.dark-mode .project-logo-image {
+    filter: invert(1); /* 다크모드에서 로고 색상 반전 */
+}
+
+body.dark-mode .footer {
+    background-color: #1A1A1A;
+    color: #fff;
+}
+
+body.dark-mode .dark-mode-toggle .toggle-icon {
+    content: '☀️';
+}
+
+/* 다크모드 토글 아이콘 변경 */
+body.dark-mode .toggle-icon::before {
+    content: '☀️';
+}
+
+body.dark-mode .toggle-icon {
+    font-size: 0;
+}
+
+body.dark-mode .toggle-icon::before {
+    font-size: 1.5rem;
+}

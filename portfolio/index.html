@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>권온주 포트폴리오</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- 인트로 섹션 -->
+    <section id="intro" class="intro-section">
+      <!-- 상단 헤더 -->
+      <div class="intro-header">
+        <div class="copyright">©2025</div>
+        <div class="intro-title">Onju's Portfolio</div>
+        <div class="dark-mode-toggle" id="darkModeToggle">
+          <input
+            type="checkbox"
+            id="darkModeCheckbox"
+            class="toggle-checkbox"
+          />
+          <label for="darkModeCheckbox" class="toggle-label">
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="intro-content">
+        <div class="intro-text">
+          <div class="intro-line">UIUX</div>
+          <div class="intro-line">PORTFOLIO</div>
+        </div>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="intro-contact-left">contact / +82 010.5501.9378</div>
+      <div class="intro-contact-right">e-mail / onjuu1016@gmail.com</div>
+    </section>
+
+    <!-- 메인 컨텐츠 컨테이너 -->
+    <div class="content-container">
+      <!-- 사이드바 네비게이션 -->
+      <nav class="sidebar" id="sidebar">
+        <ul class="nav-list">
+          <li><a href="#intro" class="nav-item">Intro</a></li>
+          <li><a href="#profile" class="nav-item">Profile</a></li>
+          <li><a href="#project01" class="nav-item">01</a></li>
+          <li><a href="#project02" class="nav-item">02</a></li>
+          <li><a href="#project03" class="nav-item">03</a></li>
+          <li><a href="#project04" class="nav-item">04</a></li>
+          <li><a href="#project05" class="nav-item">05</a></li>
+          <li><a href="#project06" class="nav-item">06</a></li>
+          <li><a href="#project07" class="nav-item">07</a></li>
+        </ul>
+      </nav>
+
+      <!-- 메인 콘텐츠 -->
+      <main class="main-content">
+        <!-- 프로필 섹션 -->
+        <section id="profile" class="profile-section">
+          <div class="profile-content">
+            <!-- 좌측 프로필 영역 -->
+            <div class="profile-left">
+              <div class="profile-image">
+                <img src="images/profile.png" alt="권온주 프로필" />
+              </div>
+              <div class="profile-description">
+                <div class="profile-greeting">
+                  <h2>안녕하세요</h2>
+                  <p class="profile-intro">
+                    사용자의 관점에서 디자인하는
+                    <span class="name-emphasis">권온주</span> 입니다.
+                  </p>
+                </div>
+                <div class="profile-name">
+                  <h3><span class="name-emphasis">권온주</span> / onju kwon</h3>
+                </div>
+                <p>디자인은 문제를 해결하는 동시에 사람들과 감정을</p>
+                <p>나누는 일이라고 생각합니다.</p>
+                <p>작은 요소 하나도 사용자에게 영향을 줄 수 있기에,</p>
+                <p>저는 늘 섬세하게 바라보려 노력합니다.</p>
+                <p>변화에 유연하게 반응하며 더 나은 방향을 탐색하는</p>
+                <p>디자이너가 되고 싶습니다.</p>
+              </div>
+            </div>
+
+            <!-- 우측 정보 영역 -->
+            <div class="profile-right">
+              <div class="info-section">
+                <h4>Introduce</h4>
+                <p>1999.10.16</p>
+                <p>010-5501-9378</p>
+                <p>onjuu1016@gmail.com</p>
+              </div>
+
+              <div class="info-section">
+                <h4>Education</h4>
+                <p>2025 그린컴퓨터학원_UI/UX 웹 디자인 양성과정</p>
+                <p>2025 영남대학교 경영학과 졸업</p>
+                <p>2017 호산고등학교 졸업</p>
+              </div>
+
+              <div class="info-section">
+                <h4>Advantages</h4>
+                <p>#도전적인 #끈기있는 #섬세한</p>
+              </div>
+
+              <div class="info-section">
+                <h4>Skills</h4>
+                <div class="skills-icons">
+                  <img src="images/Photoshop.png" alt="Photoshop" />
+                  <img src="images/Illustrator.png" alt="Illustrator" />
+                  <img src="images/Figma.png" alt="Figma" />
+                  <img src="images/Html.png" alt="HTML" />
+                  <img src="images/Css.png" alt="CSS" />
+                </div>
+              </div>
+
+              <div class="info-section">
+                <h4>Certificate</h4>
+                <p>2024.09 GTQ1급</p>
+                <p>2019.08 2종보통 운전면허</p>
+                <p>2018.06 ITQ한글엑셀 A등급</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 프로젝트 01: HUEREE -->
+        <section id="project01" class="project-detail-section">
+          <div class="project-detail-content">
+            <!-- 좌측 프로젝트 이미지 -->
+            <div class="project-image-area">
+              <img
+                src="images/hueree img.png"
+                alt="HUEREE 프로젝트"
+                class="main-project-image"
+              />
+            </div>
+
+            <!-- 우측 프로젝트 정보 -->
+            <div class="project-info-area">
+              <h1 class="project-main-title">HUEREE</h1>
+              <h2 class="project-subtitle">휴애리 웹 리디자인</h2>
+              <p class="project-description">
+                제주의 사계절 자연을 담은 감성적인 디자인 입니다. 따뜻한 색감과
+                여백 중심의 레이아웃으로 편안하고 여유로운 분위기를 시각적으로
+                전달합니다.
+              </p>
+
+              <div class="project-details">
+                <div class="detail-row">
+                  <div class="detail-left">
+                    <span class="detail-label">TYPE</span>
+                  </div>
+                  <div class="detail-right">
+                    <span class="detail-value">팀 프로젝트 25%</span>
+                  </div>
+                </div>
+
+                <div class="detail-row">
+                  <div class="detail-left">
+                    <span class="detail-label">TOOLS</span>
+                  </div>
+                  <div class="detail-right">
+                    <div class="detail-tools">
+                      <img
+                        src="images/Photoshop.png"
+                        alt="Photoshop"
+                        class="tool-icon"
+                      />
+                      <img
+                        src="images/Figma.png"
+                        alt="Figma"
+                        class="tool-icon"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="detail-row">
+                  <div class="detail-left">
+                    <span class="detail-label">FONT</span>
+                  </div>
+                  <div class="detail-right">
+                    <span class="detail-value">Pretendard, Baloo</span>
+                  </div>
+                </div>
+
+                <div class="detail-row">
+                  <div class="detail-left">
+                    <span class="detail-label">COLOR</span>
+                  </div>
+                  <div class="detail-right">
+                    <div
+                      class="color-chip"
+                      style="background-color: #81986b"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-buttons">
+                <button class="btn-original">ORIGINAL</button>
+                <button class="btn-figma">DESIGN : FIGMA</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 프로젝트 02: overdue flair -->
+        <section id="project02" class="project-detail-section">
+          <div class="project-detail-content">
+            <!-- 좌측 프로젝트 정보 -->
+            <div class="project-info-area">
+              <div class="project-main-title">OVERDUE FLAIR</div>
+              <h2 class="project-subtitle">오버듀플레어 웹 리디자인</h2>
+              <p class="project-description">
+                대담한 타이포그래피와 감각적인 이미지 구성으로 브랜드의 세련된
+                무드를 강조한 리디자인 입니다. 강렬한 컬러와 그리드 레이아웃을
+                통해 스타일리시한 사용자 경험을 제공합니다.
+              </p>
+
+              <div class="project-details">
+                <div class="detail-row">
+                  <div class="detail-left">
+                    <span class="detail-label">TYPE</span>
+                  </div>
+                  <div class="detail-right">
+                    <span class="detail-value">개인 프로젝트 100%</span>
+                  </div>
+                </div>
+
+                <div class="detail-row">
+                  <div class="detail-left">
+                    <span class="detail-label">TOOLS</span>
+                  </div>
+                  <div class="detail-right">
+                    <div class="detail-tools">
+                      <img
+                        src="images/Photoshop.png"
+                        alt="Photoshop"
+                        class="tool-icon"
+                      />
+                      <img
+                        src="images/Figma.png"
+                        alt="Figma"
+                        class="tool-icon"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="detail-row">
+                  <div class="detail-left">
+                    <span class="detail-label">FONT</span>
+                  </div>
+                  <div class="detail-right">
+                    <span class="detail-value">Pretendard, Purple Purse </span>
+                  </div>
+                </div>
+
+                <div class="detail-row">
+                  <div class="detail-left">
+                    <span class="detail-label">COLOR</span>
+                  </div>
+                  <div class="detail-right">
+                    <div
+                      class="color-chip"
+                      style="background-color: #c00"
+                    ></div>
+                    <div
+                      class="color-chip color-chip-border"
+                      style="background-color: #000"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-buttons">
+                <button class="btn-original">ORIGINAL</button>
+                <button class="btn-figma">DESIGN : FIGMA</button>
+              </div>
+            </div>
+
+            <!-- 우측 프로젝트 이미지 -->
+            <div class="project-image-area">
+              <img
+                src="images/overdue flair img.png"
+                alt="overdue flair 프로젝트"
+                class="main-project-image"
+              />
+            </div>
+          </div>
+        </section>
+
+        <!-- 프로젝트 03: Pa kit -->
+        <section id="project03" class="project-detail-section">
+          <div class="project-detail-content">
+            <!-- 좌측 프로젝트 이미지 -->
+            <div class="project-image-area">
+              <img
+                src="images/pawkit img.png"
+                alt="Pa kit 프로젝트"
+                class="main-project-image"
+              />
+            </div>
+
+            <!-- 우측 프로젝트 정보 -->
+            <div class="project-info-area">
+              <div class="project-main-title">PAWKIK</div>
+              <h2 class="project-subtitle">반려동물 쇼핑 & 커뮤니티 앱</h2>
+              <p class="project-description">
+                반려견과 보호자의 따뜻한 일상을 감성적으로 표현한 앱 디자인
+                입니다. 부드러운 톤과 직관적인 UI로 신뢰감 있는 케어 서비스를
+                전달합니다.
+              </p>
+
+              <div class="project-details">
+                <div class="detail-row">
+                  <div class="detail-left">
+                    <span class="detail-label">TYPE</span>
+                  </div>
+                  <div class="detail-right">
+                    <span class="detail-value">팀 프로젝트 35%</span>
+                  </div>
+                </div>
+
+                <div class="detail-row">
+                  <div class="detail-left">
+                    <span class="detail-label">TOOLS</span>
+                  </div>
+                  <div class="detail-right">
+                    <div class="detail-tools">
+                      <img
+                        src="images/Figma.png"
+                        alt="Figma"
+                        class="tool-icon"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="detail-row">
+                  <div class="detail-left">
+                    <span class="detail-label">FONT</span>
+                  </div>
+                  <div class="detail-right">
+                    <span class="detail-value">Pretendard, Baloo</span>
+                  </div>
+                </div>
+
+                <div class="detail-row">
+                  <div class="detail-left">
+                    <span class="detail-label">COLOR</span>
+                  </div>
+                  <div class="detail-right">
+                    <div
+                      class="color-chip"
+                      style="background-color: #a1c398"
+                    ></div>
+                    <div
+                      class="color-chip"
+                      style="background-color: #ffe9a0"
+                    ></div>
+                    <div
+                      class="color-chip"
+                      style="background-color: #dcd5c5"
+                    ></div>
+                    <div
+                      class="color-chip color-chip-border"
+                      style="background-color: #fdfbf7"
+                    ></div>
+                    <div
+                      class="color-chip color-chip-border"
+                      style="background-color: #2f2f2f"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-buttons">
+                <button class="btn-figma">DESIGN : FIGMA</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 프로젝트 04: ATIISSU -->
+        <section id="project04" class="project-detail-section">
+          <div class="project-detail-content">
+            <!-- 좌측 프로젝트 정보 -->
+            <div class="project-info-area">
+              <div class="project-main-title">ATIISSU</div>
+              <h2 class="project-subtitle">어티슈 상세페이지</h2>
+              <p class="project-description">
+                강렬한 레드 컬러와 미니멀한 구성으로 패션 브랜드의 대담함을
+                강조한 상세페이지 입니다. 제품 중심의 레이아웃으로 시각적
+                몰입도를 높였습니다.
+              </p>
+
+              <div class="project-details">
+                <div class="detail-row">
+                  <div class="detail-left">
+                    <span class="detail-label">TYPE</span>
+                  </div>
+                  <div class="detail-right">
+                    <span class="detail-value">개인 프로젝트 100%</span>
+                  </div>
+                </div>
+
+                <div class="detail-row">
+                  <div class="detail-left">
+                    <span class="detail-label">TOOLS</span>
+                  </div>
+                  <div class="detail-right">
+                    <div class="detail-tools">
+                      <img
+                        src="images/Photoshop.png"
+                        alt="Photoshop"
+                        class="tool-icon"
+                      />
+                      <img
+                        src="images/Figma.png"
+                        alt="Figma"
+                        class="tool-icon"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="detail-row">
+                  <div class="detail-left">
+                    <span class="detail-label">FONT</span>
+                  </div>
+                  <div class="detail-right">
+                    <span class="detail-value">Pretendard, Purple Purse</span>
+                  </div>
+                </div>
+
+                <div class="detail-row">
+                  <div class="detail-left">
+                    <span class="detail-label">COLOR</span>
+                  </div>
+                  <div class="detail-right">
+                    <div
+                      class="color-chip"
+                      style="background-color: #c00"
+                    ></div>
+                    <div
+                      class="color-chip color-chip-border"
+                      style="background-color: #000"
+                    ></div>
+                    <div
+                      class="color-chip"
+                      style="background-color: #fff"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-buttons">
+                <button class="btn-original">ORIGINAL</button>
+                <button class="btn-figma">DESIGN : FIGMA</button>
+              </div>
+            </div>
+
+            <!-- 우측 프로젝트 이미지 -->
+            <div class="project-image-area">
+              <img
+                src="images/atiissu img.png"
+                alt="ATIISSU 프로젝트"
+                class="main-project-image"
+              />
+            </div>
+          </div>
+        </section>
+
+        <!-- 프로젝트 05: 논픽션 -->
+        <section id="project05" class="project-detail-section">
+          <div class="project-detail-content">
+            <!-- 좌측 프로젝트 이미지 -->
+            <div class="project-image-area">
+              <img
+                src="images/nonfiction img.png"
+                alt="논픽션 프로젝트"
+                class="main-project-image"
+              />
+            </div>
+
+            <!-- 우측 프로젝트 정보 -->
+            <div class="project-info-area">
+              <div class="project-main-title">NONFICTION</div>
+              <h2 class="project-subtitle">논픽션 상세페이지</h2>
+              <p class="project-description">
+                감성적인 색감과 여백 중심 디자인으로 고급스러운 뷰티 브랜드의
+                무드를 표현 했습니다. 제품 특징이 돋보이도록 정제된 구성으로
+                완성했습니다.
+              </p>
+
+              <div class="project-details">
+                <div class="detail-row">
+                  <div class="detail-left">
+                    <span class="detail-label">TYPE</span>
+                  </div>
+                  <div class="detail-right">
+                    <span class="detail-value">개인 프로젝트 100%</span>
+                  </div>
+                </div>
+
+                <div class="detail-row">
+                  <div class="detail-left">
+                    <span class="detail-label">TOOLS</span>
+                  </div>
+                  <div class="detail-right">
+                    <div class="detail-tools">
+                      <img
+                        src="images/Photoshop.png"
+                        alt="Photoshop"
+                        class="tool-icon"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="detail-row">
+                  <div class="detail-left">
+                    <span class="detail-label">FONT</span>
+                  </div>
+                  <div class="detail-right">
+                    <span class="detail-value">Pretendard</span>
+                  </div>
+                </div>
+
+                <div class="detail-row">
+                  <div class="detail-left">
+                    <span class="detail-label">COLOR</span>
+                  </div>
+                  <div class="detail-right">
+                    <div
+                      class="color-chip"
+                      style="background-color: #f7a0c3"
+                    ></div>
+                    <div
+                      class="color-chip color-chip-border"
+                      style="background-color: #fff"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-buttons">
+                <button class="btn-original">ORIGINAL</button>
+                <button class="btn-figma">DESIGN : FIGMA</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 프로젝트 06: 모두투어 -->
+        <section id="project06" class="project-detail-section">
+          <div class="project-detail-content">
+            <!-- 좌측 프로젝트 정보 -->
+            <div class="project-info-area">
+              <div class="project-main-title">모두투어</div>
+              <h2 class="project-subtitle">모두투어 랜딩페이지</h2>
+              <p class="project-description">
+                발리의 시원한 분위기를 블루 톤과 감각적인 이미지로 표현한 랜딩
+                페이지 입니다. 항공, 숙소, 투어 정보를 직관적으로 구성해 여행의
+                설렘을 효과적으로 전달합니다.
+              </p>
+
+              <div class="project-details">
+                <div class="detail-row">
+                  <div class="detail-left">
+                    <span class="detail-label">TYPE</span>
+                  </div>
+                  <div class="detail-right">
+                    <span class="detail-value">개인 프로젝트 100%</span>
+                  </div>
+                </div>
+
+                <div class="detail-row">
+                  <div class="detail-left">
+                    <span class="detail-label">TOOLS</span>
+                  </div>
+                  <div class="detail-right">
+                    <div class="detail-tools">
+                      <img
+                        src="images/Figma.png"
+                        alt="Figma"
+                        class="tool-icon"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="detail-row">
+                  <div class="detail-left">
+                    <span class="detail-label">FONT</span>
+                  </div>
+                  <div class="detail-right">
+                    <span class="detail-value">Pretendard, Bagel Fat One</span>
+                  </div>
+                </div>
+
+                <div class="detail-row">
+                  <div class="detail-left">
+                    <span class="detail-label">COLOR</span>
+                  </div>
+                  <div class="detail-right">
+                    <div
+                      class="color-chip"
+                      style="background-color: #0e55b0"
+                    ></div>
+                    <div
+                      class="color-chip"
+                      style="background-color: #3cadee"
+                    ></div>
+                    <div
+                      class="color-chip"
+                      style="background-color: #fff"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-buttons">
+                <button class="btn-figma">DESIGN : FIGMA</button>
+              </div>
+            </div>
+
+            <!-- 우측 프로젝트 이미지 -->
+            <div class="project-image-area">
+              <img
+                src="images/modu img.png"
+                alt="모두투어 프로젝트"
+                class="main-project-image"
+              />
+            </div>
+          </div>
+        </section>
+
+        <!-- 프로젝트 07: 삼성화재 -->
+        <section id="project07" class="project-detail-section">
+          <div class="project-detail-content">
+            <!-- 좌측 프로젝트 이미지 -->
+            <div class="project-image-area">
+              <img
+                src="images/samsungfire img.png"
+                alt="삼성화재 프로젝트"
+                class="main-project-image"
+              />
+            </div>
+
+            <!-- 우측 프로젝트 정보 -->
+            <div class="project-info-area">
+              <div class="project-main-title">삼성화재</div>
+              <h2 class="project-subtitle">삼성화재 클론코딩</h2>
+              <p class="project-description">
+                삼성화재 웹사이트를 클론코딩하여 실무 중심의 UI 구조와 웹
+                퍼블리싱 역량을 강화한 프로젝트입니다. HTML, CSS, JavaScript를
+                활용해 반응형 인터페이스와 실용적인 보험 콘텐츠 구성을
+                구현했습니다.
+              </p>
+
+              <div class="project-details">
+                <div class="detail-row">
+                  <div class="detail-left">
+                    <span class="detail-label">TYPE</span>
+                  </div>
+                  <div class="detail-right">
+                    <span class="detail-value">협업 프로젝트</span>
+                  </div>
+                </div>
+
+                <div class="detail-row">
+                  <div class="detail-left">
+                    <span class="detail-label">TOOLS</span>
+                  </div>
+                  <div class="detail-right">
+                    <div class="detail-tools">
+                      <img src="images/Html.png" alt="HTML" class="tool-icon" />
+                      <img src="images/Css.png" alt="CSS" class="tool-icon" />
+                      <img
+                        src="images/Javascript.png"
+                        alt="JavaScript"
+                        class="tool-icon"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="detail-row">
+                  <div class="detail-left">
+                    <span class="detail-label">FONT</span>
+                  </div>
+                  <div class="detail-right">
+                    <span class="detail-value">Noto Sans KR</span>
+                  </div>
+                </div>
+
+                <div class="detail-row">
+                  <div class="detail-left">
+                    <span class="detail-label">COLOR</span>
+                  </div>
+                  <div class="detail-right">
+                    <div
+                      class="color-chip"
+                      style="background-color: #1d3ddf"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-buttons">
+                <button class="btn-figma">WEB SITE</button>
+                <button class="btn-original">ORIGINAL</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-text">
+          <div class="footer-line">THANK</div>
+          <div class="footer-line">YOU!</div>
+        </div>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
